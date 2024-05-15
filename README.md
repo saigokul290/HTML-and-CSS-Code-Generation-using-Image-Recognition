@@ -78,15 +78,7 @@ Draw the design using the symbols on a plain white (preferably A4 size) sheet an
 python main.py
 ```
 Depending on the processing hardware, it might take some time to execute. The preprocessed image with detected elements is displayed to show which elements have been identified. This image can be closed by pressing any key after which, the webpage would automatically open in a new browser window. Generated HTML code can be found in _generated_code.html_  file in the specified directory.
+<img width="917" alt="image" src="https://github.com/saigokul290/HTML-and-CSS-Code-Generation-using-Image-Recognition/assets/87557049/b9439900-6655-4ac0-ba08-51b2dcabe8e9">
+<img width="952" alt="image" src="https://github.com/saigokul290/HTML-and-CSS-Code-Generation-using-Image-Recognition/assets/87557049/e4ab5fb6-9249-406f-a0d0-b8cf1fd016d3">
 
-## Demo
 
-Click on the image to watch the demo video on YouTube.
-
-[![Watch the video](/images_for_README/demo.png)](https://youtu.be/UQYS5Qtyd98)
-
-## Contributing
-Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change. Please perform the appropriate testing of proposed additions before creating a pull request.
-
-## License
-[MIT](https://choosealicense.com/licenses/mit/)
