@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <style>
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+.container {
+  height: 90vh;
+  padding-top: 10vh;
+}
+.contain {
+  height: 100vh;
+  width: 100%;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+.card {
+  border-radius: 10px;
+  box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.3);
+  width: 600px;
+  height: 260px;
+  background-color: #ffffff;
+  padding: 10px 30px 40px;
+}
+
+.card h3 {
+  font-size: 22px;
+  font-weight: 600;
+  
+}
+
+.drop_box {
+  margin: 10px 0;
+  padding: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  border: 3px dotted #a3a3a3;
+  border-radius: 5px;
+}
+
+.drop_box h4 {
+  font-size: 16px;
+  font-weight: 400;
+  color: #2e2e2e;
+}
+
+.drop_box p {
+  margin-top: 10px;
+  margin-bottom: 20px;
+  font-size: 12px;
+  color: #a3a3a3;
+}
+
+.btn {
+  text-decoration: none;
+  background-color: #005af0;
+  color: #ffffff;
+  padding: 10px 20px;
+  border: none;
+  outline: none;
+  transition: 0.3s;
+}
+
+.btn:hover{
+  text-decoration: none;
+  background-color: #ffffff;
+  color: #005af0;
+  padding: 10px 20px;
+  border: none;
+  outline: 1px solid #010101;
+}
+.form input {
+  margin: 10px 0;
+  width: 100%;
+  background-color: #e2e2e2;
+  border: none;
+  outline: none;
+  padding: 12px 20px;
+  border-radius: 4px;
+}
+body{
+  background-image: url('https://images.unsplash.com/photo-1497091071254-cc9b2ba7c48a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2074&q=80');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  }
+
+  h3{
+    color: white;
+    text-align: center;
+  }
+    </style>
+</head>
+<body>
+    <!-- <div class="contain">
+            <div class="card">
+              <h3>Upload Files</h3>
+              <div class="drop_box">
+                <header>
+                  <h4>Select File here</h4>
+                </header>
+                <p>Files Supported: .png, .jpg, .jpeg</p>
+                <input type="file" hidden accept=".png, .jpg, .jpeg" id="fileID" style="display:none;">
+                <button class="btn">Choose File</button>
+              </div>
+        </div>
+    </div> -->
+
+      <div class="container">
+        <div class="row" id="Box">
+          <div class="col-lg-4">
+                <h3>INPUT IMAGE</h3>
+                <img src="{{input_image}}" alt="" width="100%" height="400px" onload="Scrolling()">
+                <br>
+                <br><br>
+                <center>
+                  <a href="{{input_image}}" download>
+                    <button class="btn">Download</button>
+                  </a>
+                </center>
+          </div>
+          <div class="col-lg-4">
+            <h3>OUTPUT IMAGE</h3>
+            <img src="{{output_image}}" alt="" width="100%" height="400px">
+            <br>
+            <br><br>
+            <center>
+              <a href="{{output_image}}" download>
+                <button class="btn">Download</button>
+              </a>
+            </center>
+      </div>
+      <div class="col-lg-4">
+        <h3>HTML</h3>
+        <embed src="{{html_page}}" type="text/html" width="100%" height="400px">
+          <br>
+          <br><br>
+          <center>
+            <a href="{{html_page}}" download>
+              <button class="btn">Download</button>
+            </a>
+          </center>
+  </div>
+
+  <div class="col-lg-4">
+    <h3>CSS</h3>
+    <embed src="{{css_page}}" type="text/html" width="100%" height="400px">
+      <br>
+      <br><br>
+      <center>
+        <a href="{{css_page}}" download>
+          <button class="btn">Download</button>
+        </a>
+      </center>
+</div>
+
+      </div>
+
+      <script>
+        const dropArea = document.querySelector(".drop_box"),
+  button = dropArea.querySelector("button"),
+  dragText = dropArea.querySelector("header"),
+  input = dropArea.querySelector("input");
+let file;
+var filename;
+
+button.onclick = () => {
+  input.click();
+};
+
+input.addEventListener("change", function (e) {
+  var fileName = e.target.files[0].name;
+  let filedata = `
+    <form action="/generate" method="post">
+    <div class="form">
+    <h4>${fileName}</h4>
+    <input type="text" value="${fileName}" name = "File" hidden>
+    <button class="btn">Upload</button>
+    </div>
+    </form>`;
+  dropArea.innerHTML = filedata;
+});
+
+
+function Scrolling(){
+  const element = document.getElementById("Box");
+element.scrollIntoView({behavior: "smooth", block: "end", inline: "nearest"});
+}
+      </script>
+</body>
+</html>
