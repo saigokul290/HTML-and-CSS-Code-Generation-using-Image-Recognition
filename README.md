@@ -42,19 +42,14 @@ This project takes a 'hand-drawn HTML page layout' image as an input from the us
 
 6. Go through each .py file and specify paths to the required files. Read the comments around the path variables to understand the requirements. 
 
-## Usage Instruction
-
-After the setup is done, running this project is quite straight forward. 
-
-Use these symbols to represent the HTML Elements in your website design.
- 
 <img src='images_for_README/symbols.png' width='400' align='centre'>
 
 Draw the design using the symbols on a plain white (preferably A4 size) sheet and click a picture in decent lighting. Specify the path of the image in the `main.py` file run it using one line of code from your terminal.
  
 ```python
-python main.py
+python app.py
 ```
+upload the file in the address 127.0.0.1
 Depending on the processing hardware, it might take some time to execute. The preprocessed image with detected elements is displayed to show which elements have been identified. This image can be closed by pressing any key after which, the webpage would automatically open in a new browser window. Generated HTML code can be found in _generated_code.html_  file in the specified directory.
 <img width="917" alt="image" src="https://github.com/saigokul290/HTML-and-CSS-Code-Generation-using-Image-Recognition/assets/87557049/b9439900-6655-4ac0-ba08-51b2dcabe8e9">
 <img width="952" alt="image" src="https://github.com/saigokul290/HTML-and-CSS-Code-Generation-using-Image-Recognition/assets/87557049/e4ab5fb6-9249-406f-a0d0-b8cf1fd016d3">
