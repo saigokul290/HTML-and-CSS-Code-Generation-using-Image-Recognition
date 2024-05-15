@@ -11,9 +11,6 @@ This project takes a 'hand-drawn HTML page layout' image as an input from the us
 2. Visit the /models/research/object_detection page and follow the setup instructions to install all the dependencies required to run the Object Detection files.
 
    [Go to models/research/object_detection GitHub page](https://github.com/tensorflow/models/tree/master/research/object_detection)
-
-   [View installation guide for Object Detection API](https://github.com/tensorflow/models/blob/master/research/object_detection/g3doc/installation.md)
-
 3. The library dependencies can be installed from the requirements.txt file using the following command:
 
    ```bash
