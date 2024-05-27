@@ -2,6 +2,11 @@
 
 This project takes a 'hand-drawn HTML page layout' image as an input from the user and converts it into a functional HTML and css webpage!
 
+## Credits and Members of the project:
+ 1. Sai Gokul KP (@saigokul290)
+ 2. Roshan Immanuel (@RoshFps)
+ 3. Rohan S
+
 ## Installation Guide
 
 1. Clone/Download the Official TensorFlow models GitHub repository:
